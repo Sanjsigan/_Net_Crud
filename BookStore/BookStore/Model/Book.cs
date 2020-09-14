@@ -18,6 +18,8 @@ namespace BookStore.Model
 
         public String Author { get; set; }
 
+        public string ISBN { get; set; }
+
          
         
     }
