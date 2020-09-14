@@ -31,7 +31,7 @@ namespace BookStore.Pages.Booklist
             {
                 await _db.Book.AddAsync(Book);
                 await _db.SaveChangesAsync();
-                return RedirectToPage(PageName);
+                return RedirectToPage("Index");
 
             }
             else

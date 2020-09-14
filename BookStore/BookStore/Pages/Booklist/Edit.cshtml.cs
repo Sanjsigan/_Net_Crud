@@ -24,8 +24,25 @@ namespace BookStore.Pages.Booklist
         
         public async Task OnGet( int id)
         {
-            Book = await _db.Book.FindAsync(id);
+            Book = await _db.Book.FindAsync(id); 
+        }
+
+        public async Task<IActionResult> OnPost()
+        {
+
+            if (ModelState.IsValid)
+            {
+                var BookfromDb = await _db.Book.FindAsync(Book.Id);
+                BookfromDb.Name = Book.Name;
+                BookfromDb.Author = Book.Author;
+                BookfromDb.ISBN = Book.ISBN;
+               
+
+                await _db.SaveChangesAsync();
+                return RedirectToPage("Index");
             
         }
+        return RedirectToPage();
     }
+}
 }
