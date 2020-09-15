@@ -39,7 +39,7 @@ namespace BookStore.Controllers
                 return Json(new { success = false, message = "Erroe while Deleting" });
                 
             }
-            _db.Book.Remove(bookfromDb);
+            _db.Book.Remove(bookfromDb);   
             await _db.SaveChangesAsync();
             return Json(new { success = true, message = "Delete successfull" });
 

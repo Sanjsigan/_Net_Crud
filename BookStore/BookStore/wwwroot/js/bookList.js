@@ -19,11 +19,12 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                        <a href="/Booklist/Edit?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
+                        <a href="/Booklist/Upset?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
                             Edit
                         </a>
                         &nbsp;
-                        <a class='btn btn-danger text-white' style='cursor:pointer; width:70px;'>
+                        <a class='btn btn-danger text-white' style='cursor:pointer; width:70px;'
+                         onclick=Delete('/api/book?id='+${data})>
                             Delete
                         </a>
                         </div>`;
@@ -34,5 +35,31 @@ function loadDataTable() {
             "emptyTable": "no data found"
         },
         "width": "100%"
+    });
+}
+
+function Delete(url) {
+    swal({
+        title: "Are You sure?",
+        text: "once deleted, you will not able to recover",
+        icon: "warning",
+        dangermode: true
+    }).then((willDelete) => {
+        if (willDelete) {
+            $.ajax({
+                type: "DELETE",
+                url: url,
+                success: function (data) {
+                    if (data.success) {
+                        toastr.success(data.message);
+                        dataTable.ajax.reload();
+
+                    }
+                    else {
+                        toastr.error(data.message);
+                    }
+                }
+            });
+        }
     });
 }

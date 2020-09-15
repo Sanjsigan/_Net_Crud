@@ -381,3 +381,4 @@ G:\_.Net\BookStore\BookStore\obj\Debug\netcoreapp3.1\BookStore.MvcApplicationPar
 G:\_.Net\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\Booklist\Index.cshtml.g.cs
 G:\_.Net\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\Booklist\Create.cshtml.g.cs
 G:\_.Net\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\Booklist\Edit.cshtml.g.cs
+G:\_.Net\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\Booklist\Upset.cshtml.g.cs
