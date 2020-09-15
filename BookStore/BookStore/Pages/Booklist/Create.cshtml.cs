@@ -23,6 +23,7 @@ namespace BookStore.Pages.Booklist
         
         public void OnGet()
         {
+
         }
 
         public async Task<IActionResult> OnPost()
@@ -32,7 +33,6 @@ namespace BookStore.Pages.Booklist
                 await _db.Book.AddAsync(Book);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("Index");
-
             }
             else
             {

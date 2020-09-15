@@ -26,6 +26,7 @@ namespace BookStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbConnect>(options=>options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
@@ -52,6 +53,7 @@ namespace BookStore
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }

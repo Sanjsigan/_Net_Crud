@@ -9,9 +9,7 @@ namespace BookStore.Model
     public class Book
 
     {
-
         [Key]
-
         public int Id { get; set;  }
         [Required]
         public String Name { get; set; }
@@ -20,7 +18,5 @@ namespace BookStore.Model
 
         public string ISBN { get; set; }
 
-         
-        
     }
 }
